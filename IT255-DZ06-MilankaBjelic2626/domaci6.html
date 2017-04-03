@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+            <script>
+            $(document).ready(function(){
+            $.ajax({
+            url: 'http://jsonplaceholder.typicode.com/posts/5',
+            type: "GET",
+            success: function(html){
+            var obj = html;
+            $("#userId").append("userId: " + obj.userId);
+            $("#id").append("id: " + obj.id);
+            $("#title").append("title: " + obj.title);
+            $("#body").append("body:" + obj.body);
+            }
+            });
+        });
+        </script>
+    </head>
+    <body>
+        <div id="userId"></div>
+        <div id="id"></div>
+        <div id="title"></div>
+        <div id="body"></div>
+    </body>
+</html>
